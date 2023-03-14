@@ -187,10 +187,10 @@ class _LoginState extends State<Login> {
             // child:Text('mail me'),
             child: FloatingActionButton.extended(
               onPressed: (){
-                Navigator.pushReplacementNamed(context, '/screen');
+                Navigator.pushReplacementNamed(context, '/OTP');
               },
               label: const Text (
-                "Let's Start Shopping",
+                "Get OTP",
                 style:TextStyle(
                   fontFamily:'Gloock-Regular',
                   fontWeight: FontWeight.bold,
