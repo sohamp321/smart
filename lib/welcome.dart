@@ -14,22 +14,17 @@ class _WelcomeState extends State<Welcome> {
       body:Column(
         children:<Widget> [
           Container(
-
             child: Image.asset('assets/abcdef.png'),
           ),
-
           Container(
-
             padding:EdgeInsets.fromLTRB(40.0, 10.0, 40.0, 0.0),
             child:Text(
-              'Get Your Favourite ',
+              'Get Your Favourite \n Items, Delivered Right \n To Your Doorstep',
+              textAlign: TextAlign.center,
               style:TextStyle(
-
-                fontFamily:'Gloock-Regular',
+                fontFamily:'Montserrat-SemiBold',
                 fontWeight: FontWeight.bold,
                 fontSize: 30,
-
-
               ),
 
 
@@ -37,44 +32,44 @@ class _WelcomeState extends State<Welcome> {
             ),
 
           ),
-          Container(
-
-            // padding:EdgeInsets.fromLTRB(40.0, 30.0, 40.0, 30.0),
-            child:Text(
-              'Items, Delivered Right ',
-              style:TextStyle(
-
-                fontFamily:'Gloock-Regular',
-                fontWeight: FontWeight.bold,
-                fontSize: 30,
-
-
-              ),
-
-
-
-            ),
-
-          ),
-          Container(
-
-            // padding:EdgeInsets.fromLTRB(40.0, 30.0, 40.0, 30.0),
-            child:Text(
-              'To Your DoorStep',
-              style:TextStyle(
-
-                fontFamily:'Gloock-Regular',
-                fontWeight: FontWeight.bold,
-                fontSize: 30,
-
-
-              ),
-
-
-
-            ),
-
-          ),
+          // Container(
+          //
+          //   // padding:EdgeInsets.fromLTRB(40.0, 30.0, 40.0, 30.0),
+          //   child:Text(
+          //     'Items, Delivered Right ',
+          //     style:TextStyle(
+          //
+          //       fontFamily:'Gloock-Regular',
+          //       fontWeight: FontWeight.bold,
+          //       fontSize: 30,
+          //
+          //
+          //     ),
+          //
+          //
+          //
+          //   ),
+          //
+          // ),
+          // Container(
+          //
+          //   // padding:EdgeInsets.fromLTRB(40.0, 30.0, 40.0, 30.0),
+          //   child:Text(
+          //     'To Your DoorStep',
+          //     style:TextStyle(
+          //
+          //       fontFamily:'Gloock-Regular',
+          //       fontWeight: FontWeight.bold,
+          //       fontSize: 30,
+          //
+          //
+          //     ),
+          //
+          //
+          //
+          //   ),
+          //
+          // ),
 
 
         ],
@@ -91,17 +86,16 @@ class _WelcomeState extends State<Welcome> {
             fontSize: 30.0,
             fontWeight: FontWeight.bold,
             color:Colors.black87,
-            fontFamily: 'Gloock-Regular',
+            fontFamily: 'Montserrat-Bold',
           ),
         ),
         backgroundColor: Colors.amber,
+        elevation: 0.0,
+        shape: BeveledRectangleBorder(
+            borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+        ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-
-
-
-
-
 
     );
   }
