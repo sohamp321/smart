@@ -78,7 +78,12 @@ flutter:
    - family: Gloock
      fonts:
        - asset: fonts/Gloock-Regular.ttf
-
+   - family: Montserrat
+     fonts:
+       - asset: fonts/Montserrat-SemiBold.ttf
+         weight: 600
+       - asset: fonts/Montserrat-Bold.ttf
+         weight: 700
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
