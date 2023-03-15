@@ -13,7 +13,7 @@ class _ScreenState extends State<Screen> {
         children: <Widget> [
           Container(
             color:Colors.amber[200],
-            height:100,
+            height:80,
             width:500,
             child:Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -48,7 +48,7 @@ class _ScreenState extends State<Screen> {
 
           ),
           Container(
-            padding:EdgeInsets.fromLTRB(10.0, 30.0, 270, 10.0),
+            padding:EdgeInsets.fromLTRB(10.0, 20.0, 270, 10.0),
             child:Text(
               'Hello,Jiya',
               style:TextStyle(
@@ -89,7 +89,7 @@ class _ScreenState extends State<Screen> {
 
           ),
           Container(
-            height:48,
+            height:40,
             width:350,
             padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 5.0),
             decoration: BoxDecoration(
@@ -416,6 +416,41 @@ class _ScreenState extends State<Screen> {
               ),
 
             ],
+
+          ),
+          SizedBox(height:20.0),
+          Container(
+            color:Colors.amber[200],
+            width:350,
+              child:IconButton(
+                icon: Icon(Icons.shopping_cart),
+                onPressed: () {
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(builder: (context) => AnotherPage()),
+                  // );
+                },
+              ),
+
+            // child:FloatingActionButton.extended(
+            //   onPressed: (){
+            //     Navigator.pushReplacementNamed(context, '/OTP');
+            //   },
+            //   label: const Text (
+            //     "x Items",
+            //     style:TextStyle(
+            //       fontFamily:'Gloock-Regular',
+            //
+            //       fontSize: 15,
+            //       color:Colors.black87,
+            //     ),
+            //   ),
+            //   backgroundColor: Colors.amber[200],
+            //   elevation: 0.0,
+            //   shape: BeveledRectangleBorder(
+            //     borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+            //   ),
+            // ),
 
           ),
 
