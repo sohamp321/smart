@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart/items.dart';
 import 'package:smart/loading.dart';
 import 'package:smart/login.dart';
 import 'package:smart/otp.dart';
@@ -16,6 +17,7 @@ void main() => runApp( MaterialApp(
     '/screen':(context)=>const Screen(),
     '/Thanks':(context)=>const Thanks(),
     '/OTP':(context)=>const OTP(),
+    '/items':(context)=>const ITEMS(),
 
 
   },

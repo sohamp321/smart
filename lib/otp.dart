@@ -136,7 +136,7 @@ class _OTPState extends State<OTP> {
             // child:Text('mail me'),
             child: FloatingActionButton.extended(
               onPressed: (){
-                Navigator.pushReplacementNamed(context, '/OTP');
+                Navigator.pushReplacementNamed(context, '/screen');
               },
               label: const Text (
                 "Verify",
