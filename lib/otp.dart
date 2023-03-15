@@ -129,30 +129,61 @@ class _OTPState extends State<OTP> {
 
             ),
           ),
-          Container(
-            padding:EdgeInsets.fromLTRB(10.0, 30.0, 10.0, 50.0),
-            // margin: EdgeInsets.all(20.0),
-            // color:Colors.white,
-            // child:Text('mail me'),
-            child: FloatingActionButton.extended(
-              onPressed: (){
-                Navigator.pushReplacementNamed(context, '/screen');
-              },
-              label: const Text (
-                "Verify",
-                style:TextStyle(
-                  fontFamily:'Gloock-Regular',
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30,
-                  color:Colors.black87,
+          SizedBox(height:20),
+          SizedBox(
+            height:60,
+            width:double.infinity,
+            child: ElevatedButton(
+              onPressed: (){},
+                child:Text(
+                    'Verify',
+                     style:TextStyle(
+                       fontWeight: FontWeight.bold,
+                       color:Colors.black87,
+                       fontSize: 30,
+
+    ),
+    ),
+              style:ElevatedButton.styleFrom(
+                primary:Colors.pink[100],
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+
+
+
                 ),
+
               ),
-              backgroundColor: Colors.pink[100],
-              elevation: 0.0,
-              shape: BeveledRectangleBorder(
-                borderRadius: const BorderRadius.all(Radius.circular(10.0)),
-              ),
-            ),),
+
+
+            ),
+
+
+          ),
+          // Container(
+          //   padding:EdgeInsets.fromLTRB(10.0, 30.0, 10.0, 50.0),
+          //   // margin: EdgeInsets.all(20.0),
+          //   // color:Colors.white,
+          //   // child:Text('mail me'),
+          //   child: FloatingActionButton.extended(
+          //     onPressed: (){
+          //       Navigator.pushReplacementNamed(context, '/screen');
+          //     },
+          //     label: const Text (
+          //       "Verify",
+          //       style:TextStyle(
+          //         fontFamily:'Gloock-Regular',
+          //         fontWeight: FontWeight.bold,
+          //         fontSize: 30,
+          //         color:Colors.black87,
+          //       ),
+          //     ),
+          //     backgroundColor: Colors.pink[100],
+          //     elevation: 0.0,
+          //     shape: BeveledRectangleBorder(
+          //       borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+          //     ),
+          //   ),),
 
 
         ],
