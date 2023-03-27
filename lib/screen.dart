@@ -13,7 +13,7 @@ class _ScreenState extends State<Screen> {
         children: <Widget> [
           Container(
             color:Colors.amber[200],
-            height:100,
+            height:80,
             width:500,
             child:Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -48,7 +48,7 @@ class _ScreenState extends State<Screen> {
 
           ),
           Container(
-            padding:EdgeInsets.fromLTRB(10.0, 30.0, 270, 10.0),
+            padding:EdgeInsets.fromLTRB(10.0, 20.0, 270, 10.0),
             child:Text(
               'Hello,Jiya',
               style:TextStyle(
@@ -89,9 +89,9 @@ class _ScreenState extends State<Screen> {
 
           ),
           Container(
-            height:48,
+            height:40,
             width:350,
-            padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
+            padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 5.0),
             decoration: BoxDecoration(
               color: Colors.grey[300],
               borderRadius: BorderRadius.circular(10.0),
@@ -112,34 +112,9 @@ class _ScreenState extends State<Screen> {
               ),
             ),
           ),
-          // Container(
-          //   color:Colors.grey[200],
-          //   width: 350.0,
-          //   height: 48.0,
-          //   child:Row(
-          //     mainAxisAlignment: MainAxisAlignment.start,
-          //     children:[
-          //       Icon(
-          //         Icons.search,
-          //         size:20,
-          //         color:Colors.black,
-          //       ),
-          //       Text(
-          //         '   Search',
-          //         style:TextStyle(
-          //
-          //           fontSize: 20,
-          //
-          //         ),
-          //
-          //
-          //       ),
-          //     ],
-          //   ),
-          //
-          // ),
+
           Container(
-            padding:EdgeInsets.fromLTRB(0.0, 40.0,205.0,20.0),
+            padding:EdgeInsets.fromLTRB(0.0, 20.0,205.0,10.0),
             child:Text(
               'Categories',
               style:TextStyle(
@@ -154,166 +129,352 @@ class _ScreenState extends State<Screen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children:[
-              Container(
-                height:160,
-                width: 120,
-                color:Colors.blue[100],
-                child:Column(
-                  children:[
-                    Image.asset('assets/chips.png'),
-                    Container(
-                      height:3,
-                      width:120,
-                      color:Colors.blue[100],
-                    ),
-                    Image.asset('assets/chips_text.png'),
+                  ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(context, '/items');
 
-                  ],
-                ),
-
+        },
+              style: ElevatedButton.styleFrom(
+                primary: Colors.blue[100],
+                padding: EdgeInsets.symmetric(horizontal: 7, vertical: 12),
               ),
-              Container(
-                height:160,
-                width: 120,
-                color:Colors.yellow[100],
-                child:Column(
-                  children:[
-                    Image.asset('assets/biscuits.png'),
-                    Container(
-                      height:3,
-                      width:120,
-                      color:Colors.yellow[100],
+              child:
+                    Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'assets/chips.png',
+                        height: 85,
+                        width: 100,
+                      ),
+
+
+                      Image.asset('assets/chips_text.png'),
+                    ],
+                  ),
+
+              //   ],
+              // ),
+        ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/items');
+
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.yellow[100],
+                  padding: EdgeInsets.symmetric(horizontal: 6, vertical: 15),
+                ),
+                child:
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/biscuits.png',
+                      height: 85,
+                      width: 100,
                     ),
-                    Image.asset('assets/biscuit_text.png'),
 
 
+                    Image.asset(
+                        'assets/biscuit_text.png',
+                      width:120,
+                    ),
                   ],
                 ),
 
+                //   ],
+                // ),
               ),
-              Container(
-                height:160,
-                width: 120,
-                color:Colors.red[100],
-                child:Column(
-                  children:[
-                    Image.asset('assets/pastry_2.png'),
-                    Container(
-                      height:7,
-                      width:120,
-                      color:Colors.red[100],
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/items');
+
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.red[100],
+                  padding: EdgeInsets.symmetric(horizontal: 6, vertical: 15),
+                ),
+                child:
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/pastry_2.png',
+                      height: 85,
+                      width: 100,
                     ),
-                    Image.asset('assets/pastry_text.png'),
 
 
+                    Image.asset(
+                      'assets/pastry_text.png',
+                      width:120,
+                    ),
                   ],
                 ),
 
+                //   ],
+                // ),
               ),
 
             ],
 
           ),
           Container(
-            height:20,
+            height:10,
             width:500,
             color:Colors.white,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children:[
-              Container(
-                height:160,
-                width: 120,
-                color:Colors.green[100],
-                child:Column(
-                  children:[
-                    Image.asset('assets/spices.png'),
-                    Container(
-                      height:14,
-                      width:120,
-                      color:Colors.green[100],
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/items');
+
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.green[100],
+                  padding: EdgeInsets.symmetric(horizontal: 0.1, vertical: 12),
+                ),
+                child:
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/spices.png',
+                      height: 90,
+                      width: 100,
                     ),
+
+
                     Image.asset('assets/spicess_text2.png'),
-
                   ],
                 ),
 
+                //   ],
+                // ),
               ),
-              Container(
-                height:160,
-                width: 120,
-                color:Colors.blue[100],
-                child:Column(
-                  children:[
-                    Image.asset('assets/chocolates.png'),
-                    Container(
-                      height:0,
-                      width:120,
-                      color:Colors.yellow[100],
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/items');
+
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.blue[100],
+                  padding: EdgeInsets.symmetric(horizontal: 6, vertical: 15),
+                ),
+                child:
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/chocolates.png',
+                      height: 90,
+                      width: 100,
                     ),
-                    Image.asset('assets/choco_text.png'),
 
 
+                    Image.asset(
+                      'assets/choco_text.png',
+                      width:120,
+                    ),
                   ],
                 ),
 
+                //   ],
+                // ),
               ),
-              Container(
-                height:160,
-                width: 120,
-                color:Colors.yellow[100],
-                child:Column(
-                  children:[
-                    Container(
-                      height:10,
-                      width:120,
-                      color:Colors.yellow[100],
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/items');
+
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.yellow[100],
+                  padding: EdgeInsets.symmetric(horizontal: 6, vertical: 15),
+                ),
+                child:
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/beve.png',
+                      height: 85,
+                      width: 100,
                     ),
-                    Image.asset('assets/beve.png'),
-                    Container(
-                      height:28,
-                      width:120,
-                      color:Colors.yellow[100],
-                    ),
-                    Image.asset('assets/bev_text.png'),
 
 
+                    Image.asset(
+                      'assets/bev_text.png',
+                      width:120,
+                    ),
                   ],
                 ),
 
+                //   ],
+                // ),
               ),
 
             ],
 
           ),
           Container(
-            height:50,
+            height:10,
             width:500,
             color:Colors.white,
           ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children:[
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/items');
 
-          Container(
-            height:60,
-            width:500,
-            color:Colors.red[50],
-            child:Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children:[
-                Icon(
-                  Icons.receipt,
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.blue[100],
+                  padding: EdgeInsets.symmetric(horizontal: 0.1, vertical: 12),
+                ),
+                child:
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/cake.png',
+                      height: 90,
+                      width: 125,
+                    ),
 
-                ),
-                Icon(
-                  Icons.home,
-                ),
-                Icon(
-                  Icons.shopping_cart,
+
+                    Image.asset('assets/cake_text1.png'),
+                  ],
                 ),
 
-              ],
-            ),
+                //   ],
+                // ),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/items');
+
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.yellow[100],
+                  padding: EdgeInsets.symmetric(horizontal: 6, vertical: 15),
+                ),
+                child:
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/cannedgoods.png',
+                      height: 85,
+                      width: 100,
+                    ),
+
+
+                    Image.asset(
+                      'assets/cannedgoodstext.png',
+                      width:120,
+                    ),
+                  ],
+                ),
+
+                //   ],
+                // ),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/items');
+
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.red[100],
+                  padding: EdgeInsets.symmetric(horizontal: 6, vertical: 15),
+                ),
+                child:
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/personalcare.png',
+                      height: 85,
+                      width: 100,
+                    ),
+
+
+                    Image.asset(
+                      'assets/personal_text.png',
+                      width:120,
+                    ),
+                  ],
+                ),
+
+                //   ],
+                // ),
+              ),
+
+            ],
+
           ),
+          SizedBox(height:20.0),
+          Container(
+            color:Colors.amber[200],
+            width:350,
+              child:IconButton(
+                icon: Icon(Icons.shopping_cart),
+                onPressed: () {
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(builder: (context) => AnotherPage()),
+                  // );
+                },
+              ),
+
+            // child:FloatingActionButton.extended(
+            //   onPressed: (){
+            //     Navigator.pushReplacementNamed(context, '/OTP');
+            //   },
+            //   label: const Text (
+            //     "x Items",
+            //     style:TextStyle(
+            //       fontFamily:'Gloock-Regular',
+            //
+            //       fontSize: 15,
+            //       color:Colors.black87,
+            //     ),
+            //   ),
+            //   backgroundColor: Colors.amber[200],
+            //   elevation: 0.0,
+            //   shape: BeveledRectangleBorder(
+            //     borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+            //   ),
+            // ),
+
+          ),
+
+          // Container(
+          //   height:60,
+          //   width:500,
+          //   color:Colors.red[50],
+          //   child:Row(
+          //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          //     children:[
+          //       Icon(
+          //         Icons.receipt,
+          //
+          //       ),
+          //       Icon(
+          //         Icons.home,
+          //       ),
+          //       Icon(
+          //         Icons.shopping_cart,
+          //       ),
+          //
+          //     ],
+          //   ),
+          // ),
 
         ],
       ),
