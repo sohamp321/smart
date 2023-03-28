@@ -134,7 +134,10 @@ class _OTPState extends State<OTP> {
             height:60,
             width:double.infinity,
             child: ElevatedButton(
-              onPressed: (){},
+              onPressed:(){
+                  Navigator.pushReplacementNamed(context, '/screen');
+                  }
+                  ,
                 child:Text(
                     'Verify',
                      style:TextStyle(

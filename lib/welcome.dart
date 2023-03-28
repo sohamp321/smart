@@ -78,7 +78,7 @@ class _WelcomeState extends State<Welcome> {
 
       floatingActionButton:FloatingActionButton.extended(
         onPressed: (){
-          Navigator.pushReplacementNamed(context, '/login');
+          Navigator.pushReplacementNamed(context, '/phone');
         },
         label: Text(
           'Get Started',
