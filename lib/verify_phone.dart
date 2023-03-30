@@ -5,13 +5,11 @@ import 'package:pinput/pinput.dart';
 
 class MyVerify extends StatefulWidget {
   const MyVerify({Key? key}) : super(key: key);
-
   @override
   State<MyVerify> createState() => _MyVerifyState();
 }
 
 class _MyVerifyState extends State<MyVerify> {
-
   final FirebaseAuth auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
@@ -107,7 +105,7 @@ class _MyVerifyState extends State<MyVerify> {
                 height: 45,
                 child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.green.shade600,
+                        backgroundColor: Colors.purple.shade100,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10))),
                     onPressed: () async{
@@ -118,7 +116,12 @@ class _MyVerifyState extends State<MyVerify> {
                       await auth.signInWithCredential(credential);
                       Navigator.pushNamedAndRemoveUntil(context, '/screen', (route) => false);
                     },
-                    child: Text("Verify Phone Number")),
+                    child: Text(
+                        "Verify Phone Number",
+                         style:TextStyle(
+                           color:Colors.black87,
+                         ),
+                    )),
               ),
               Row(
                 children: [

@@ -9,6 +9,10 @@ import 'package:smart/thanks.dart';
 import 'package:smart/welcome.dart';
 import 'package:smart/phone.dart';
 import 'package:smart/verify_phone.dart';
+import 'package:smart/cart_model.dart';
+import 'package:smart/db_helper.dart';
+import 'package:smart/cart_screen.dart';
+import 'package:smart/cart_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,6 +30,7 @@ void main() async {
       '/items': (context) => const ITEMS(),
       '/phone':(context) => const MyPhone(),
       '/verify_phone': (context) => const MyVerify(),
+      '/cart_screen': (context) => const CartScreen(),
 
 
     },
@@ -33,3 +38,5 @@ void main() async {
   )
   );
 }
+
+
