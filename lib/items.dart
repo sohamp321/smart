@@ -3,8 +3,8 @@ import 'package:provider/provider.dart';
 import 'package:smart/cart_model.dart';
 import 'package:smart/cart_provider.dart';
 import 'package:smart/db_helper.dart';
+import 'package:smart/fetch.dart';
 // import 'package:badges/badges.dart';
-
 class ITEMS extends StatefulWidget {
   const ITEMS({Key? key}) : super(key: key);
   @override
@@ -65,6 +65,7 @@ class _ITEMSState extends State<ITEMS> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children:[
                       Text(productName[index].toString(),
+                  // Text(chip['productName'].tostring(),
                         style:TextStyle(
                           fontWeight:FontWeight.bold,
                           fontSize: 15,

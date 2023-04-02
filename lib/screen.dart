@@ -91,7 +91,7 @@ class _ScreenState extends State<Screen> {
           Container(
             height:40,
             width:350,
-            padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 5.0),
+            padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 3.0),
             decoration: BoxDecoration(
               color: Colors.grey[300],
               borderRadius: BorderRadius.circular(10.0),
@@ -131,7 +131,7 @@ class _ScreenState extends State<Screen> {
             children:[
                   ElevatedButton(
                   onPressed: () {
-                    Navigator.pushReplacementNamed(context, '/items');
+                    Navigator.pushReplacementNamed(context, '/fetch');
 
         },
               style: ElevatedButton.styleFrom(
@@ -158,7 +158,7 @@ class _ScreenState extends State<Screen> {
         ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/items');
+                  Navigator.pushReplacementNamed(context, '/biscuits');
 
                 },
                 style: ElevatedButton.styleFrom(
@@ -188,7 +188,7 @@ class _ScreenState extends State<Screen> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/items');
+                  Navigator.pushReplacementNamed(context, '/pastries');
 
                 },
                 style: ElevatedButton.styleFrom(
@@ -230,11 +230,11 @@ class _ScreenState extends State<Screen> {
             children:[
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/items');
+                  Navigator.pushReplacementNamed(context, '/spices');
 
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.green[100],
+                  primary: Colors.red[100],
                   padding: EdgeInsets.symmetric(horizontal: 0.1, vertical: 12),
                 ),
                 child:
@@ -257,7 +257,7 @@ class _ScreenState extends State<Screen> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/items');
+                  Navigator.pushReplacementNamed(context, '/chocolates');
 
                 },
                 style: ElevatedButton.styleFrom(
@@ -287,7 +287,7 @@ class _ScreenState extends State<Screen> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/items');
+                  Navigator.pushReplacementNamed(context, '/beverages');
 
                 },
                 style: ElevatedButton.styleFrom(
@@ -329,7 +329,7 @@ class _ScreenState extends State<Screen> {
             children:[
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/items');
+                  Navigator.pushReplacementNamed(context, '/cakes');
 
                 },
                 style: ElevatedButton.styleFrom(
@@ -356,7 +356,7 @@ class _ScreenState extends State<Screen> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/items');
+                  Navigator.pushReplacementNamed(context, '/cannedgoods');
 
                 },
                 style: ElevatedButton.styleFrom(
@@ -386,7 +386,7 @@ class _ScreenState extends State<Screen> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/items');
+                  Navigator.pushReplacementNamed(context, '/personalcare');
 
                 },
                 style: ElevatedButton.styleFrom(
@@ -421,7 +421,7 @@ class _ScreenState extends State<Screen> {
           SizedBox(height:20.0),
           Container(
             color:Colors.amber[200],
-            width:350,
+            width:double.infinity,
               child:IconButton(
                 icon: Icon(Icons.shopping_cart),
                 onPressed: () {
