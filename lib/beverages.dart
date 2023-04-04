@@ -12,6 +12,7 @@ class Beverages extends StatefulWidget {
 
 class _BeveragesState extends State<Beverages> {
   final auth =FirebaseAuth.instance;
+  String lol = "lol";
   final ref=FirebaseDatabase.instance.ref('beverages');
   // Reference referenceRoot=FirebaseStorage.instance.ref();
   // Reference referenceDirImages =referenceRoot.child('images');
