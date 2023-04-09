@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:smart/phone.dart';
 class Screen extends StatefulWidget {
   const Screen({Key? key}) : super(key: key);
   @override
   State<Screen> createState() => _ScreenState();
 }
 class _ScreenState extends State<Screen> {
+FirebaseAuth auth = FirebaseAuth.instance;
+Stream<User?> authStateChanges() => auth.authStateChanges();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       resizeToAvoidBottomInset: false,
       body: Column(
         children: <Widget> [
@@ -19,12 +25,12 @@ class _ScreenState extends State<Screen> {
               mainAxisAlignment: MainAxisAlignment.start,
               children:[
                 Icon(
-                  Icons.location_on_outlined,
+                  Icons.person_2_outlined,
                   size:48,
                   color:Colors.black,
                 ),
-                Text(
-                  '165-I3',
+              Text(
+                  MyPhone.name,
                   style:TextStyle(
                     fontFamily:'Gloock-Regular',
                     fontSize: 30,
@@ -39,18 +45,18 @@ class _ScreenState extends State<Screen> {
                   width:140,
                   color:Colors.amber[200],
                 ),
-                Expanded(
-                  child:Image.asset('assets/user3.png'),
-                ),
+                // Expanded(
+                //   child:Image.asset('assets/user3.png'),
+                // ),
               ],
 
             ),
 
           ),
           Container(
-            padding:EdgeInsets.fromLTRB(10.0, 20.0, 270, 10.0),
+            padding:EdgeInsets.fromLTRB(10.0, 20.0, 250, 10.0),
             child:Text(
-              'Hello,Jiya',
+              'Hello, ${MyPhone.name}',
               style:TextStyle(
                 fontSize:20,
 
