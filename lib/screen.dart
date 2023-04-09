@@ -3,11 +3,15 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+
 import 'package:smart/cart_screen.dart';
 // import inkwell
 import 'package:smart/cart_model.dart';
 import 'package:smart/new_cart_screen.dart';
 import 'package:smart/product_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:smart/phone.dart';
+import 'package:smart/user.dart';
 
 class Screen extends StatefulWidget {
   const Screen({Key? key}) : super(key: key);
@@ -16,9 +20,13 @@ class Screen extends StatefulWidget {
 }
 
 class _ScreenState extends State<Screen> {
+// FirebaseAuth auth = FirebaseAuth.instance;
+// Stream<User?> authStateChanges() => auth.authStateChanges();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       resizeToAvoidBottomInset: false,
       body: Column(
         children: <Widget>[
@@ -30,6 +38,7 @@ class _ScreenState extends State<Screen> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Icon(
+
                   Icons.location_on_outlined,
                   size: 48,
                   color: Colors.black,
@@ -38,11 +47,22 @@ class _ScreenState extends State<Screen> {
                   '165-I3',
                   style: TextStyle(
                     fontFamily: 'Gloock-Regular',
+
+                  Icons.person_2_rounded,
+                  size:48,
+                  color:Colors.black,
+                ),
+              Text(
+                  MyPhone.name,
+                  style:TextStyle(
+                    fontFamily:'Gloock-Regular',
+
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 Container(
+
                   height: 100,
                   width: 140,
                   color: Colors.amber[200],
@@ -50,15 +70,37 @@ class _ScreenState extends State<Screen> {
                 Expanded(
                   child: Image.asset('assets/user3.png'),
                 ),
+
+                  padding:EdgeInsets.fromLTRB(190, 0, 0, 0),
+                  child:GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamedAndRemoveUntil(context, '/user', (route) => false);
+                    },
+                    child: CircleAvatar(
+                      radius: 30,
+                      backgroundImage: AssetImage('assets/userrrrrr.png'),
+                    ),
+                  ),
+                ),
+
+                Container(
+                  height:100,
+                  width:30,
+                  color:Colors.amber[200],
+                ),
+                // Expanded(
+                //   child:Container(),
+                //   child:Image.asset('assets/user-removebg-preview.png'),
+                // ),
               ],
             ),
           ),
           Container(
-            padding: EdgeInsets.fromLTRB(10.0, 20.0, 270, 10.0),
-            child: Text(
-              'Hello,Jiya',
-              style: TextStyle(
-                fontSize: 20,
+            padding:EdgeInsets.fromLTRB(10.0, 20.0, 250, 10.0),
+            child:Text(
+              'Hello, ${MyPhone.name}',
+              style:TextStyle(
+                fontSize:20,
               ),
             ),
           ),

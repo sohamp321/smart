@@ -14,8 +14,17 @@ import 'package:smart/cart_model.dart';
 import 'package:smart/db_helper.dart';
 import 'package:smart/cart_screen.dart';
 import 'package:smart/cart_provider.dart';
-
 import 'package:smart/constants.dart';
+import 'package:smart/fetch.dart';
+import 'package:smart/biscuits.dart';
+import 'package:smart/beverages.dart';
+import 'package:smart/pastries.dart';
+import 'package:smart/chocolates.dart';
+import 'package:smart/cannedgoods.dart';
+import 'package:smart/cakes.dart';
+import 'package:smart/spices.dart';
+import 'package:smart/personalcare.dart';
+import 'package:smart/user.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -48,6 +57,7 @@ void main() async {
       '/phone': (context) => const MyPhone(),
       '/verify_phone': (context) => const MyVerify(),
       '/cart_screen': (context) => const CartScreen(),
+      '/user':(context)=> const User(),
     },
   ));
 }
