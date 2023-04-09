@@ -5,6 +5,8 @@ class MyPhone extends StatefulWidget {
   const MyPhone({Key? key}) : super(key: key);
   static String verify="";
   static String name="";
+  static String location="";
+  static String number="";
   @override
   State<MyPhone> createState() => _MyPhoneState();
 
@@ -74,11 +76,43 @@ class _MyPhoneState extends State<MyPhone> {
                           keyboardType: TextInputType.name,
                           decoration: InputDecoration(
                             border: InputBorder.none,
-                            hintText: "Name ",
+                            hintText: "    Name ",
                           ),
                         ))
+
                   ],
                 ),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Container(
+                height: 55,
+                decoration: BoxDecoration(
+                    border: Border.all(width: 1, color: Colors.grey),
+                    borderRadius: BorderRadius.circular(10)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+
+
+                    Expanded(
+                        child: TextFormField(
+                          onChanged: (value){
+                            MyPhone.location=value;
+                          },
+                          keyboardType: TextInputType.name,
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            hintText: "    Location  ",
+                          ),
+                        ))
+
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 15,
               ),
               Container(
                 height: 55,
@@ -111,12 +145,13 @@ class _MyPhoneState extends State<MyPhone> {
                     Expanded(
                         child: TextField(
                           onChanged: (value){
+                            MyPhone.number=value;
                             phone=value;
                           },
                           keyboardType: TextInputType.phone,
                           decoration: InputDecoration(
                             border: InputBorder.none,
-                            hintText: "Phone No. ",
+                            hintText: " Phone No. ",
                           ),
                         ))
                   ],

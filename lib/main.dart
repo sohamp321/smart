@@ -23,6 +23,7 @@ import 'package:smart/cannedgoods.dart';
 import 'package:smart/cakes.dart';
 import 'package:smart/spices.dart';
 import 'package:smart/personalcare.dart';
+import 'package:smart/user.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -50,6 +51,7 @@ void main() async {
       '/spices':(context)=> const Spices(),
       '/personalcare':(context)=> const Personalcare(),
       '/cakes':(context)=> const cakes(),
+      '/user':(context)=> const User(),
 
 
     },

@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:smart/phone.dart';
+import 'package:smart/user.dart';
 class Screen extends StatefulWidget {
   const Screen({Key? key}) : super(key: key);
   @override
   State<Screen> createState() => _ScreenState();
 }
 class _ScreenState extends State<Screen> {
-FirebaseAuth auth = FirebaseAuth.instance;
-Stream<User?> authStateChanges() => auth.authStateChanges();
+// FirebaseAuth auth = FirebaseAuth.instance;
+// Stream<User?> authStateChanges() => auth.authStateChanges();
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,7 @@ Stream<User?> authStateChanges() => auth.authStateChanges();
               mainAxisAlignment: MainAxisAlignment.start,
               children:[
                 Icon(
-                  Icons.person_2_outlined,
+                  Icons.person_2_rounded,
                   size:48,
                   color:Colors.black,
                 ),
@@ -41,12 +42,26 @@ Stream<User?> authStateChanges() => auth.authStateChanges();
 
                 ),
                 Container(
+                  padding:EdgeInsets.fromLTRB(190, 0, 0, 0),
+                  child:GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamedAndRemoveUntil(context, '/user', (route) => false);
+                    },
+                    child: CircleAvatar(
+                      radius: 30,
+                      backgroundImage: AssetImage('assets/userrrrrr.png'),
+                    ),
+                  ),
+                ),
+
+                Container(
                   height:100,
-                  width:140,
+                  width:30,
                   color:Colors.amber[200],
                 ),
                 // Expanded(
-                //   child:Image.asset('assets/user3.png'),
+                //   child:Container(),
+                //   child:Image.asset('assets/user-removebg-preview.png'),
                 // ),
               ],
 
