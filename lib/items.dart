@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:smart/cart_model.dart';
 import 'package:smart/cart_provider.dart';
 import 'package:smart/db_helper.dart';
-import 'package:smart/fetch.dart';
+
 // import 'package:badges/badges.dart';
 class ITEMS extends StatefulWidget {
   const ITEMS({Key? key}) : super(key: key);
@@ -12,8 +12,9 @@ class ITEMS extends StatefulWidget {
 }
 class _ITEMSState extends State<ITEMS> {
 
+    DBHelper? dbHelper = DBHelper();
   List<String> productName = [ 'Indias Magic Masala','Hot n sweet chilli' , 'Classic' , 'Chile limon' , 'salt and vinegar','spicy treat','plain salted','Doritos'] ;
-  // List<String> productUnit = [ 'Dozen' , 'KG' , 'Dozen' , 'KG' , 'KG','KG',] ;
+  List<String> productUnit = [ 'Dozen' , 'KG' , 'Dozen' , 'KG' , 'KG','KG',] ;
   List<int> productPrice = [20,20,20,20,20,20,20,20];
   List<String> productImage = [
     'assets/imm.png',
@@ -27,6 +28,7 @@ class _ITEMSState extends State<ITEMS> {
   ];
   @override
   Widget build(BuildContext context) {
+    final cart = Provider.of<CartProvider>(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.amber.shade300,
@@ -80,24 +82,44 @@ class _ITEMSState extends State<ITEMS> {
                       SizedBox(width:20),
                       Align(
                         alignment: Alignment.centerRight,
-                          child:Container(
-                            width:120,
-                            height:40,
-                            decoration: BoxDecoration(
-                              color:Colors.amber.shade300,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child:Center(
-                              child:Text('Add to cart',
-                              style:TextStyle(
-                                color: Colors.black87,
-                                fontWeight: FontWeight.bold,
-                              ),),
-                            ),
+                          child:InkWell(
+                            onTap:(){
+                              dbHelper?.insert(
+                                Cart(
+                                    id: index,
+                                    productId: index.toString(),
+                                    productName: productName[index].toString(),
+                                    initialPrice: productPrice[index],
+                                    productPrice: productPrice[index],
+                                    quantity: 1,
+                                    unitTag: productUnit[index].toString(),
+                                    image: productImage[index].toString())
+                              ).then((value){
+                                print('Product is added to cart');
+                                cart.addTotalPrice(double.parse(productPrice[index].toString()));
+                              }).onError((error, stackTrace){
+                                print(error.toString());
+                              });
+                            },
+                            child: Container(
+                              width:120,
+                              height:40,
+                              decoration: BoxDecoration(
+                                color:Colors.amber.shade300,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child:Center(
+                                child:Text('Add to cart',
+                                style:TextStyle(
+                                  color: Colors.black87,
+                                  fontWeight: FontWeight.bold,
+                                ),),
+                              ),
 
 
 
                         ),
+                          ),
                       ),
 
                     ],
@@ -109,10 +131,14 @@ class _ITEMSState extends State<ITEMS> {
           ),
         );
     },)
-      ),
+          ),
+
       ]
     ),
     );
   }
 }
+
+
+
 

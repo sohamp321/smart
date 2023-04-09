@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "404467225307",
+    "firebase_url": "https://phone-number-15a5f-default-rtdb.firebaseio.com",
     "project_id": "phone-number-15a5f",
     "storage_bucket": "phone-number-15a5f.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "404467225307-9o9l6tusfn2rvhqc1jdudnm4utbv9d3u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.smart",
+            "certificate_hash": "742236e5479ddad2da0e5bc8511bcbf4bd7bd2f0"
+          }
+        },
         {
           "client_id": "404467225307-s5pift3td9kl2n2ldk0a1k7iomka548s.apps.googleusercontent.com",
           "client_type": 3
@@ -29,6 +38,13 @@
             {
               "client_id": "404467225307-s5pift3td9kl2n2ldk0a1k7iomka548s.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "404467225307-qs75uj3ch42m2r0qhinbvpk0v2tsbaeg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.smart"
+              }
             }
           ]
         }
