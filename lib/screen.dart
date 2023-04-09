@@ -1,96 +1,94 @@
+// ignore_for_file: prefer_const_constructors
+
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:smart/cart_screen.dart';
+// import inkwell
+import 'package:smart/cart_model.dart';
+import 'package:smart/new_cart_screen.dart';
+import 'package:smart/product_page.dart';
+
 class Screen extends StatefulWidget {
   const Screen({Key? key}) : super(key: key);
   @override
   State<Screen> createState() => _ScreenState();
 }
+
 class _ScreenState extends State<Screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Column(
-        children: <Widget> [
+        children: <Widget>[
           Container(
-            color:Colors.amber[200],
-            height:80,
-            width:500,
-            child:Row(
+            color: Colors.amber[200],
+            height: 80,
+            width: 500,
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
-              children:[
+              children: [
                 Icon(
                   Icons.location_on_outlined,
-                  size:48,
-                  color:Colors.black,
+                  size: 48,
+                  color: Colors.black,
                 ),
                 Text(
                   '165-I3',
-                  style:TextStyle(
-                    fontFamily:'Gloock-Regular',
+                  style: TextStyle(
+                    fontFamily: 'Gloock-Regular',
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
-
                   ),
-
-
                 ),
                 Container(
-                  height:100,
-                  width:140,
-                  color:Colors.amber[200],
+                  height: 100,
+                  width: 140,
+                  color: Colors.amber[200],
                 ),
                 Expanded(
-                  child:Image.asset('assets/user3.png'),
+                  child: Image.asset('assets/user3.png'),
                 ),
               ],
-
             ),
-
           ),
           Container(
-            padding:EdgeInsets.fromLTRB(10.0, 20.0, 270, 10.0),
-            child:Text(
+            padding: EdgeInsets.fromLTRB(10.0, 20.0, 270, 10.0),
+            child: Text(
               'Hello,Jiya',
-              style:TextStyle(
-                fontSize:20,
-
+              style: TextStyle(
+                fontSize: 20,
               ),
             ),
-
-
           ),
           Container(
-            padding:EdgeInsets.fromLTRB(20, 0.0, 110, 10.0),
-            child:Row(
-              children:[
+            padding: EdgeInsets.fromLTRB(20, 0.0, 110, 10.0),
+            child: Row(
+              children: [
                 Text(
                   'Welcome to ',
-                  style:TextStyle(
-                    fontSize:30,
-                    fontFamily:'Gloock-Regular',
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontFamily: 'Gloock-Regular',
                     fontWeight: FontWeight.bold,
                   ),
-
                 ),
                 Text(
                   'SMart ',
-                  style:TextStyle(
-                    fontSize:30,
-                    fontFamily:'Gloock-Regular',
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontFamily: 'Gloock-Regular',
                     fontWeight: FontWeight.bold,
-                    color:Colors.blue[800],
+                    color: Colors.blue[800],
                   ),
-
                 ),
               ],
-
             ),
-
-
           ),
           Container(
-            height:40,
-            width:350,
+            height: 40,
+            width: 350,
             padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 3.0),
             decoration: BoxDecoration(
               color: Colors.grey[300],
@@ -104,7 +102,6 @@ class _ScreenState extends State<Screen> {
                 ),
               ],
             ),
-
             child: TextField(
               decoration: InputDecoration(
                 border: InputBorder.none,
@@ -114,59 +111,56 @@ class _ScreenState extends State<Screen> {
           ),
 
           Container(
-            padding:EdgeInsets.fromLTRB(0.0, 20.0,205.0,10.0),
-            child:Text(
+            padding: EdgeInsets.fromLTRB(0.0, 20.0, 205.0, 10.0),
+            child: Text(
               'Categories',
-              style:TextStyle(
-                fontSize:30,
-                fontFamily:'Gloock-Regular',
+              style: TextStyle(
+                fontSize: 30,
+                fontFamily: 'Gloock-Regular',
                 fontWeight: FontWeight.bold,
               ),
-
             ),
-
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children:[
-                  ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushReplacementNamed(context, '/fetch');
-
-        },
-              style: ElevatedButton.styleFrom(
-                primary: Colors.blue[100],
-                padding: EdgeInsets.symmetric(horizontal: 7, vertical: 12),
-              ),
-              child:
-                    Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'assets/chips.png',
-                        height: 85,
-                        width: 100,
-                      ),
-
-
-                      Image.asset('assets/chips_text.png'),
-                    ],
-                  ),
-
-              //   ],
-              // ),
-        ),
+            children: [
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/biscuits');
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) =>
+                          ProductPage(category_name: 'chips')));
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.blue[100],
+                  padding: EdgeInsets.symmetric(horizontal: 7, vertical: 12),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/chips.png',
+                      height: 85,
+                      width: 100,
+                    ),
+                    Image.asset('assets/chips_text.png'),
+                  ],
+                ),
 
+                //   ],
+                // ),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  var String = 'biscuits';
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) =>
+                          ProductPage(category_name: 'biscuits')));
                 },
                 style: ElevatedButton.styleFrom(
                   primary: Colors.yellow[100],
                   padding: EdgeInsets.symmetric(horizontal: 6, vertical: 15),
                 ),
-                child:
-                Column(
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
@@ -174,11 +168,9 @@ class _ScreenState extends State<Screen> {
                       height: 85,
                       width: 100,
                     ),
-
-
                     Image.asset(
-                        'assets/biscuit_text.png',
-                      width:120,
+                      'assets/biscuit_text.png',
+                      width: 120,
                     ),
                   ],
                 ),
@@ -188,15 +180,16 @@ class _ScreenState extends State<Screen> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/pastries');
-
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) =>
+                          ProductPage(category_name: 'pastries')));
+                  ;
                 },
                 style: ElevatedButton.styleFrom(
                   primary: Colors.red[100],
                   padding: EdgeInsets.symmetric(horizontal: 6, vertical: 15),
                 ),
-                child:
-                Column(
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
@@ -204,11 +197,9 @@ class _ScreenState extends State<Screen> {
                       height: 85,
                       width: 100,
                     ),
-
-
                     Image.asset(
                       'assets/pastry_text.png',
-                      width:120,
+                      width: 120,
                     ),
                   ],
                 ),
@@ -216,29 +207,27 @@ class _ScreenState extends State<Screen> {
                 //   ],
                 // ),
               ),
-
             ],
-
           ),
           Container(
-            height:10,
-            width:500,
-            color:Colors.white,
+            height: 10,
+            width: 500,
+            color: Colors.white,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children:[
+            children: [
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/spices');
-
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) =>
+                          ProductPage(category_name: 'spices')));
                 },
                 style: ElevatedButton.styleFrom(
                   primary: Colors.red[100],
                   padding: EdgeInsets.symmetric(horizontal: 0.1, vertical: 12),
                 ),
-                child:
-                Column(
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
@@ -246,8 +235,6 @@ class _ScreenState extends State<Screen> {
                       height: 90,
                       width: 100,
                     ),
-
-
                     Image.asset('assets/spicess_text2.png'),
                   ],
                 ),
@@ -257,15 +244,15 @@ class _ScreenState extends State<Screen> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/chocolates');
-
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) =>
+                          ProductPage(category_name: 'chocolates')));
                 },
                 style: ElevatedButton.styleFrom(
                   primary: Colors.blue[100],
                   padding: EdgeInsets.symmetric(horizontal: 6, vertical: 15),
                 ),
-                child:
-                Column(
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
@@ -273,11 +260,9 @@ class _ScreenState extends State<Screen> {
                       height: 90,
                       width: 100,
                     ),
-
-
                     Image.asset(
                       'assets/choco_text.png',
-                      width:120,
+                      width: 120,
                     ),
                   ],
                 ),
@@ -287,15 +272,15 @@ class _ScreenState extends State<Screen> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/beverages');
-
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) =>
+                          ProductPage(category_name: 'beverages')));
                 },
                 style: ElevatedButton.styleFrom(
                   primary: Colors.yellow[100],
                   padding: EdgeInsets.symmetric(horizontal: 6, vertical: 15),
                 ),
-                child:
-                Column(
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
@@ -303,11 +288,9 @@ class _ScreenState extends State<Screen> {
                       height: 85,
                       width: 100,
                     ),
-
-
                     Image.asset(
                       'assets/bev_text.png',
-                      width:120,
+                      width: 120,
                     ),
                   ],
                 ),
@@ -315,29 +298,27 @@ class _ScreenState extends State<Screen> {
                 //   ],
                 // ),
               ),
-
             ],
-
           ),
           Container(
-            height:10,
-            width:500,
-            color:Colors.white,
+            height: 10,
+            width: 500,
+            color: Colors.white,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children:[
+            children: [
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/cakes');
-
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) =>
+                          ProductPage(category_name: 'cakes')));
                 },
                 style: ElevatedButton.styleFrom(
                   primary: Colors.blue[100],
                   padding: EdgeInsets.symmetric(horizontal: 0.1, vertical: 12),
                 ),
-                child:
-                Column(
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
@@ -345,8 +326,6 @@ class _ScreenState extends State<Screen> {
                       height: 90,
                       width: 125,
                     ),
-
-
                     Image.asset('assets/cake_text1.png'),
                   ],
                 ),
@@ -356,15 +335,15 @@ class _ScreenState extends State<Screen> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/cannedgoods');
-
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) =>
+                          ProductPage(category_name: 'cannedgoods')));
                 },
                 style: ElevatedButton.styleFrom(
                   primary: Colors.yellow[100],
                   padding: EdgeInsets.symmetric(horizontal: 6, vertical: 15),
                 ),
-                child:
-                Column(
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
@@ -372,11 +351,9 @@ class _ScreenState extends State<Screen> {
                       height: 85,
                       width: 100,
                     ),
-
-
                     Image.asset(
                       'assets/cannedgoodstext.png',
-                      width:120,
+                      width: 120,
                     ),
                   ],
                 ),
@@ -386,15 +363,15 @@ class _ScreenState extends State<Screen> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/personalcare');
-
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) =>
+                          ProductPage(category_name: 'personalcare')));
                 },
                 style: ElevatedButton.styleFrom(
                   primary: Colors.red[100],
                   padding: EdgeInsets.symmetric(horizontal: 6, vertical: 15),
                 ),
-                child:
-                Column(
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
@@ -402,11 +379,9 @@ class _ScreenState extends State<Screen> {
                       height: 85,
                       width: 100,
                     ),
-
-
                     Image.asset(
                       'assets/personal_text.png',
-                      width:120,
+                      width: 120,
                     ),
                   ],
                 ),
@@ -414,23 +389,21 @@ class _ScreenState extends State<Screen> {
                 //   ],
                 // ),
               ),
-
             ],
-
           ),
-          SizedBox(height:20.0),
+          SizedBox(height: 20.0),
           Container(
-            color:Colors.amber[200],
-            width:double.infinity,
-              child:IconButton(
-                icon: Icon(Icons.shopping_cart),
-                onPressed: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) => AnotherPage()),
-                  // );
-                },
-              ),
+            color: Colors.amber[200],
+            width: double.infinity,
+            child: IconButton(
+              icon: Icon(Icons.shopping_cart),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => CartScreen2()),
+                );
+              },
+            ),
 
             // child:FloatingActionButton.extended(
             //   onPressed: (){
@@ -451,7 +424,6 @@ class _ScreenState extends State<Screen> {
             //     borderRadius: const BorderRadius.all(Radius.circular(10.0)),
             //   ),
             // ),
-
           ),
 
           // Container(
@@ -475,12 +447,8 @@ class _ScreenState extends State<Screen> {
           //     ],
           //   ),
           // ),
-
         ],
       ),
-
-
-
     );
   }
 }
